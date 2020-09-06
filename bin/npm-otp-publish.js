@@ -40,7 +40,7 @@ async function main () {
     }
   })
   app.register(require('fastify-static'), {
-    root: path.join(__dirname, 'public'),
+    root: path.join(__dirname, '../public'),
     prefix: '/public/'
   })
   app.register(require('fastify-cors'), { })
