@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.16.1](https://www.github.com/mmarchini-oss/node-npm-otp-publish/compare/v0.16.0...v0.16.1) (2020-09-06)
+
+
+### Bug Fixes
+
+* **ci:** use main instead of v0 ([252da60](https://www.github.com/mmarchini-oss/node-npm-otp-publish/commit/252da60bc31af80ca92f8cbdabf853b9393f2a0c))
+
 ## [0.16.0](https://www.github.com/mmarchini-oss/node-npm-otp-publish/compare/v0.15.2...v0.16.0) (2020-09-06)
 
 
