@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+      - main
+
+name: releaser
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v1.6.3
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: node
+          package-name: '@mmarchini/node-otp-publish'
+
+      - uses: actions/checkout@v2
+        if: ${{ steps.release.outputs.release_created }}
+      - uses: mmarchini-oss/npm-otp-publish
+        if: ${{ steps.release.outputs.release_created }}
+        with:
+          npm_token: ${{ secrets.NPM_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          version_url: https://github.com/${{ github.repository }}/releases/tag/${{ steps.release.outputs.tag_name }}
+          npm_user: mmarchini-bot
+          github_actor: ${{ github.actor }}
+          github_release_team: mmarchini-oss/collaborators

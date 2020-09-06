@@ -1,0 +1,47 @@
+{
+  "name": "@mmarchini/npm-otp-publish",
+  "version": "0.15.2",
+  "description": "Action to publish npm pacakges using One-Time Passwords",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node bin/npm-otp-publish --npm-token invalid --notifier console",
+    "test": "tape test/*.test.js",
+    "lint": "npm run lint-js && npm run lint-sh",
+    "lint-js": "standard",
+    "lint-sh": "shellcheck entrypoint.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmarchini-oss/npm-otp-publish.git"
+  },
+  "author": "Mary Marchini <oss@mmarchini.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mmarchini-oss/npm-otp-publish/issues"
+  },
+  "homepage": "https://github.com/mmarchini-oss/npm-otp-publish#readme",
+  "bin": {
+    "npm-otp-publish": "./bin/npm-otp-publish.js"
+  },
+  "dependencies": {
+    "@octokit/rest": "^18.0.4",
+    "ejs": "^3.1.5",
+    "fastify": "^3.3.0",
+    "fastify-cors": "^4.1.0",
+    "fastify-formbody": "^5.0.0",
+    "fastify-static": "^3.2.0",
+    "fastq": "^1.8.0",
+    "ngrok": "^3.2.7",
+    "pino-pretty": "^4.2.0",
+    "point-of-view": "^4.4.0",
+    "queue": "^6.0.1",
+    "yargs": "^15.4.1"
+  },
+  "devDependencies": {
+    "nock": "^13.0.4",
+    "nyc": "^15.1.0",
+    "standard": "^14.3.4",
+    "tape": "^4.13.3",
+    "tape-promise": "^4.0.0"
+  }
+}
