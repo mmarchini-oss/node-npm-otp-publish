@@ -6,9 +6,7 @@
   "scripts": {
     "dev": "node bin/npm-otp-publish --npm-token invalid --notifier console",
     "test": "tape test/*.test.js",
-    "lint": "npm run lint-js && npm run lint-sh",
-    "lint-js": "standard",
-    "lint-sh": "shellcheck entrypoint.sh"
+    "lint": "standard"
   },
   "repository": {
     "type": "git",
